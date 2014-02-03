@@ -104,6 +104,29 @@ _type_map = {
 
     sqlalchemy.orm.relation: complex.Array,
 
+    sqlalchemy.REAL: primitive.Float,
+    sqlalchemy.FLOAT: primitive.Float,
+    sqlalchemy.NUMERIC: primitive.Decimal,
+    sqlalchemy.DECIMAL: primitive.Decimal,
+    sqlalchemy.INTEGER: primitive.Integer,
+    sqlalchemy.INT: primitive.Integer,
+    sqlalchemy.SMALLINT: primitive.Integer,
+    sqlalchemy.BIGINT: primitive.Integer,
+    sqlalchemy.TIMESTAMP: primitive.DateTime,
+    sqlalchemy.DATETIME: primitive.DateTime,
+    sqlalchemy.DATE: primitive.Date,
+    sqlalchemy.TIME: primitive.Time,
+    sqlalchemy.TEXT: primitive.String,
+    sqlalchemy.CLOB: primitive.String,  # subclass of Text in sqlalchemy
+    sqlalchemy.VARCHAR: primitive.String,
+    sqlalchemy.NVARCHAR: primitive.String,  # unicode?
+    sqlalchemy.CHAR: primitive.String,
+    sqlalchemy.NCHAR: primitive.String,  # unicode?
+    sqlalchemy.BLOB: binary.ByteArray,
+    sqlalchemy.BINARY: binary.ByteArray,
+    sqlalchemy.VARBINARY: binary.ByteArray,
+    sqlalchemy.BOOLEAN: primitive.Boolean,
+
     UUID: primitive.String(pattern="%(x)s{8}-%(x)s{4}-%(x)s{4}-%(x)s{4}-%(x)s{12}"
                                             % {'x': '[a-fA-F0-9]'}, name='uuid')
 }
